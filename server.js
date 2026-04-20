@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import Groq from 'groq-sdk';
 import Article from './models/Article.js';
 import BlogTitle from './models/BlogTitle.js';
-import RemovedBackground from './models/Removedbackground.js';
+import removedBackground from './models/Removedbackground.js';
 import ChatSession from './models/ChatMessage.js';
 import RemovedObject from './models/RemovedObject.js';
 import GeneratedImage from "./models/GeneratedImage.js";
@@ -226,7 +226,7 @@ app.post('/api/remove-background/save', async (req, res) => {
     if (!imageBase64 || !originalName) {
       return res.status(400).json({ success: false, message: 'imageBase64 ane originalName jaruri che.' });
     }
-    const removed = new RemovedBackground({ originalName, imageBase64 });
+    const removed = new removedBackground({ originalName, imageBase64 });
     await removed.save();
     return res.status(201).json({
       success: true,
@@ -242,7 +242,7 @@ app.post('/api/remove-background/save', async (req, res) => {
 // GET /api/remove-background/all
 app.get('/api/remove-background/all', async (req, res) => {
   try {
-    const records = await RemovedBackground.find().sort({ createdAt: -1 });
+    const records = await removedBackground.find().sort({ createdAt: -1 });
     return res.status(200).json({ success: true, records });
   } catch (error) {
     return res.status(500).json({ success: false, message: error.message });
