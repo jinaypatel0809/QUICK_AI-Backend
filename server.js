@@ -5,11 +5,11 @@ import dotenv from 'dotenv';
 import Groq from 'groq-sdk';
 import Article from './models/Article.js';
 import BlogTitle from './models/BlogTitle.js';
-import removedBackground from './models/Removedbackground.js';
 import ChatSession from './models/ChatMessage.js';
 import RemovedObject from './models/RemovedObject.js';
 import GeneratedImage from "./models/GeneratedImage.js";
 import ResumeReview from './models/ResumeReview.js';
+import removedBackground from './models/RemovedBackground.js';
 
 dotenv.config();
 
