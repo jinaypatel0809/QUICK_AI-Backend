@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+
 const generatedImageSchema = new mongoose.Schema({
   prompt: {
     type: String,
