@@ -17,4 +17,6 @@ const removedBackgroundSchema = new mongoose.Schema({
 
 const removedBackground = mongoose.model('removedBackground', removedBackgroundSchema);
 
+
+
 export default removedBackground;
